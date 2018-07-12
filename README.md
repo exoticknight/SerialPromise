@@ -2,7 +2,7 @@
 
 run promises with timeout, in queue
 
-> you can alse check [parallel-promise][https://www.npmjs.com/package/parallel-promise]
+> you can alse check [parallel-promise](https://www.npmjs.com/package/parallel-promise)
 
 ## Install
 

@@ -38,7 +38,7 @@ export interface iOnProgress {
   (value:Progress):boolean|void
 }
 
-export default function QueuePromise(
+export default function SerialPromise(
   promises:PromiseGenerator[],
   timeouts:number[]=[],
   wait:number[]|number=0,

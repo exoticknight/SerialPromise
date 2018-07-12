@@ -1,10 +1,10 @@
 {
-  "name": "queue-promise",
+  "name": "serial-promise",
   "version": "0.0.1",
-  "description": "run promises with timeout, in queue",
+  "description": "run promises with timeout, in series",
   "repository": {
     "type": "git",
-    "url": "https://github.com/exoticknight/QueuePromise.git"
+    "url": "https://github.com/exoticknight/SerialPromise.git"
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -16,12 +16,12 @@
   "files": [
     "dist",
     "LICENSE",
-    "README.md",
-    "main.js"
+    "README.md"
   ],
   "keywords": [
     "promise",
     "queue",
+    "serial",
     "timeout"
   ],
   "author": {

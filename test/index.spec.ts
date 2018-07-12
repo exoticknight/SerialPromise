@@ -1,5 +1,5 @@
 import test from 'tape'
-import QueuePromise, { StatusCode } from '../src/index'
+import SerialPromise, { StatusCode } from '../src/index'
 
 function generatePromise(isRes, timeout) {
   return new Promise((res, rej) => {
@@ -14,7 +14,7 @@ function generatePromise(isRes, timeout) {
 }
 
 test('normal queue', async function(t) {
-  const rets = await QueuePromise(
+  const rets = await SerialPromise(
     [
       () => {
         return generatePromise(true, 1000)
@@ -35,7 +35,7 @@ test('normal queue', async function(t) {
 })
 
 test('timeout queue', async function(t) {
-  const rets = await QueuePromise(
+  const rets = await SerialPromise(
     [
       () => {
         return generatePromise(true, 2000)
@@ -57,7 +57,7 @@ test('timeout queue', async function(t) {
 })
 
 test('pass status', async function(t) {
-  const rets = await QueuePromise(
+  const rets = await SerialPromise(
     [
       r => {
         t.equal(r, null, 'null for the first time')
@@ -88,7 +88,7 @@ test('pass status', async function(t) {
 
 test('onPrpgress', async function(t) {
   const sequence = []
-  await QueuePromise(
+  await SerialPromise(
     [
       () => {
         return generatePromise(true, 500)
@@ -130,7 +130,7 @@ test('onPrpgress', async function(t) {
 })
 
 test('get all results', async function(t) {
-  const rets = await QueuePromise(
+  const rets = await SerialPromise(
     [
       () => {
         return generatePromise(true, 500)
