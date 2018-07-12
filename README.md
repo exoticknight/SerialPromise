@@ -1,4 +1,4 @@
-# QueuePromise
+# SerialPromise
 
 run promises with timeout, in queue
 
@@ -13,9 +13,9 @@ npm install queue-promise --save
 ## Usage
 
 ```javascript
-import QueuePromise, { StatusCode } from 'queue-promise'
+import SerialPromise, { StatusCode } from 'serial-promise'
 
-QueuePromise(
+SerialPromise(
   [
     lastResult => {
       // lastResult equals null at first
