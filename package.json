@@ -1,0 +1,39 @@
+{
+  "name": "queue-promise",
+  "version": "0.0.1",
+  "description": "run promises with timeout, in queue",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/exoticknight/QueuePromise.git"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "test": "tape -r ts-node/register test/**/*.spec.ts | faucet",
+    "prebuild": "npm run test"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md",
+    "main.js"
+  ],
+  "keywords": [
+    "promise",
+    "queue",
+    "timeout"
+  ],
+  "author": {
+    "email": "draco.knight0@gmail.com",
+    "name": "exoticknight"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/tape": "^4.2.32",
+    "faucet": "0.0.1",
+    "tape": "^4.9.1",
+    "ts-node": "^7.0.0",
+    "typescript": "^2.9.2"
+  }
+}
