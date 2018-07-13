@@ -86,7 +86,7 @@ test('pass status', async function(t) {
   t.end()
 })
 
-test('onPrpgress', async function(t) {
+test('onProgress', async function(t) {
   const sequence = []
   await SerialPromise(
     [
