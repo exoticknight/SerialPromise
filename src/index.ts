@@ -51,14 +51,11 @@ export default function SerialPromise(
     const timeoutQueue = []
     const rets = []
     rets[-1] = null
+    const waitTimes = Array.isArray(wait) ? wait : [0, ...Array(promises.length-1).fill(wait)]
 
     function worker(i) {
       let stop = false
       let timer
-      const time = (function() {
-        let ret = Array.isArray(wait) ? wait[i] : wait
-        return (Array.isArray(wait) ? wait[i] : wait) >= 0 ? ret : 0
-      })()
 
       let ret
       if (timeouts[i]) {
@@ -146,7 +143,7 @@ export default function SerialPromise(
             clearTimeout(timer)
             timer = null
             worker(i + 1)
-          }, time);
+          }, waitTimes[i] || 0);
         }
       })
     }
