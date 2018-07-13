@@ -13,6 +13,6 @@ export declare type Progress = {
     timeout: number[];
 };
 export interface iOnProgress {
-    (value: Progress): void | boolean;
+    (value: Progress): boolean | void;
 }
-export default function QueuePromise(promises: PromiseGenerator[], timeouts?: number[], wait?: number | number[], onProgress?: iOnProgress): Promise<any>;
+export default function SerialPromise(promises: PromiseGenerator[], timeouts?: number[], wait?: number[] | number, onProgress?: iOnProgress): Promise<any>;
